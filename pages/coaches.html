@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <link rel="stylesheet" href="../css/coaches.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooria's Academy | اکامی پوریا</title>
+</head>
+<body>
+    <div class="content">
+        <div class="header" id="header">
+          <a href="#">
+            <img src="../images/logo-header-p-dark.png" alt="logo" class="header-logo" id="headerLogo">
+          </a>
+          <nav>
+            <ul class="header-navbar">
+              <li><a href="https://t.me/PatrickStatus">چنل تلگرام</a></li>
+              <li><a href="https://t.me/Patrick_Status_bot">گروه واتساپ</a></li>
+              <li><a href="https://github.com/Kup1ng/Patrick">ثبت نام</a></li>
+              <li><a href="../index.html">صفحه اصلی</a></li>
+            </ul>
+          </nav>
+          <img src="../images/hamburger-light.png" alt="menu" class="hamburger-icon" id="hamburgerIcon">
+        </div>
+        <div class="hamburger-menu">
+          <div>
+            <p class="cross-icon">X</p>
+          </div>
+          <ul>
+            <li><a href="https://t.me/PatrickStatus">چنل تلگرام</a></li>
+            <li><a href="https://t.me/Patrick_Status_bot">گروه واتساپ</a></li>
+            <li>
+              <a href="callto:09111716951">ثبت نام</a>
+            </li>
+          </ul>
+        </div>
+      </div>  
+      <main>
+        <div class="coachesInfo">
+        <h1 class="main-tag">مربیان</h1>
+        <div class="stats-box" id="a1">
+          <h1>پوریا ریحانی</h1>
+          <ul>
+            <li>استاد دانشگاه</li>
+            <li>مدرس بدمینتون</li>
+            <li>lorem ipsum</li>
+          </ul>
+          </div>
+        <div class="stats-box" id="a2">
+          <h1>پدرام</h1>
+          <ul>
+            <li>استاد دانشگاه</li>
+            <li>lorem ipsum</li>
+            <li>lorem ipsum</li>
+          </ul>
+          </div>
+        <div class="stats-box" id="a3">
+          <h1>ابولفضل مهاجر بختیاری</h1>
+          <ul>
+            <li>استاد دانشگاه</li>
+            <li>مدرس بدمینتون</li>
+            <li>lorem ipsum</li>
+          </ul>
+          </div>
+        </div>
+      </main>
+      <div class="footer-line"></div>
+      <footer id="footer">
+        <div class="main-footer">
+          <div class="footer-logo">
+            <img src="../images/pooria-badmintoon-dark.png" alt="patrick status" class="footer-logo-img" id="footerLogo">
+            <div class="social" id="social">
+              <a href="https://t.me/GorganBadminton"><img src="../images/telegram-light.png" alt="telegram" class="telegram-icon" id="telegramIcon"></a>
+            </div>
+          </div>
+          <div class="setup footer-part" id="setup">
+          <div class="links footer-part" id="support">
+            <h2>Links</h2>
+            <a href="https://t.me/GorganBadminton">Telegram Channel</a>
+            <a href="https://t.me/meErfunn">Telegram Support</a>
+            <a href="https://wa.me/+989111716951">Whatsapp Group</a>
+          </div>
+          <p class="copy-right english">
+            © !This project is made by Erfan Akrami. No Copyright Allowed 
+          </p>
+      </div></footer>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const hamburgerMenu = document.querySelector('.hamburger-menu');
+          const hamburgerIcon = document.querySelector('.hamburger-icon');
+          const crossIcon = document.querySelector('.cross-icon');
+      
+          // Function to open the menu
+          function openMenu() {
+            hamburgerMenu.style.transform = 'translateX(0)';
+          }
+      
+          // Function to close the menu
+          function closeMenu() {
+            hamburgerMenu.style.transform = 'translateX(200%)';
+          }
+      
+          // Event listener for the hamburger icon to open the menu
+          hamburgerIcon.addEventListener('click', openMenu);
+      
+          // Event listener for the cross icon to close the menu
+          crossIcon.addEventListener('click', closeMenu);
+        });
+        </script>
+        <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const themeIcons = document.querySelectorAll('.theme-icon');
+        const body = document.body;
+      
+        // Retrieve theme preference from local storage
+        const savedTheme = localStorage.getItem('theme');
+      
+        // Check if a theme preference is saved in local storage
+        if (savedTheme) {
+          body.classList.add(savedTheme); // Apply the saved theme class
+        }
+      
+        // Check if theme preference has been updated
+        const themeUpdated = localStorage.getItem('themeUpdated');
+        if (themeUpdated) {
+          // Clear the flag indicating that the theme preference has been updated
+          localStorage.removeItem('themeUpdated');
+      
+          // Save the updated theme preference to local storage for other pages
+          localStorage.setItem('theme', savedTheme);
+        }
+      
+        // Add event listener to theme icons
+        themeIcons.forEach(icon => {
+          icon.addEventListener('click', () => {
+            body.classList.toggle('dark-mode'); // Toggle dark mode class on body
+      
+            // Save theme preference to local storage
+            if (body.classList.contains('dark-mode')) {
+              localStorage.setItem('theme', 'dark-mode');
+            } else {
+              localStorage.setItem('theme', 'light-mode'); // If not in dark mode, clear the saved theme
+            }
+      
+            // Set flag indicating that the theme preference has been updated
+            localStorage.setItem('themeUpdated', 'true');
+      
+            // Change logo based on the theme
+            const themeLogo = document.getElementById('headerLogo');
+            if (body.classList.contains('dark-mode')) {
+              themeLogo.src = 'images/logo-header-p-dark.png';
+            } else {
+              themeLogo.src = 'images/logo-header-p-light.png';
+            }
+            const patrickStatusText = document.getElementById('patrickStatusText');
+            if (body.classList.contains('dark-mode')) {
+              patrickStatusText.src = 'images/pooria-badmintoon-dark.png';
+            } else {
+              patrickStatusText.src = 'images/pooria-badminton-light.png';
+            }
+            const footerLogo = document.getElementById('footerLogo');
+            if (body.classList.contains('dark-mode')) {
+              footerLogo.src = 'images/footer-logo-dark.png';
+            } else {
+              footerLogo.src = 'images/footer-logo-light.png';
+            }
+            const githubIcon = document.getElementById('githubIcon');
+            if (body.classList.contains('dark-mode')) {
+              githubIcon.src = 'images/github-dark.png';
+            } else {
+              githubIcon.src = 'images/github-light.png';
+            }
+            const telegramIcon = document.getElementById('telegramIcon');
+            if (body.classList.contains('dark-mode')) {
+              telegramIcon.src = 'images/telegram-dark.png';
+            } else {
+              telegramIcon.src = 'images/telegram-light.png';
+            }
+            const LanguageIcon = document.getElementById('LanguageIcon');
+            if (body.classList.contains('dark-mode')) {
+              LanguageIcon.src = 'images/languages-dark.png';
+            } else {
+              LanguageIcon.src = 'images/languages-light.png';
+            }
+            const hamburgerIcon = document.getElementById('hamburgerIcon');
+            if (body.classList.contains('dark-mode')) {
+              hamburgerIcon.src = 'images/hamburger-dark.png';
+            } else {
+              hamburgerIcon.src = 'images/hamburger-light.png';
+            }
+            const LanguageHamburger = document.getElementById('languages-icon-hamburger-menu');
+            if (body.classList.contains('dark-mode')) {
+              LanguageHamburger.src = 'images/languages-dark.png';
+            } else {
+              LanguageHamburger.src = 'images/languages-light.png';
+            }
+            const LanguageIconSec = document.getElementById('LanguageIconSec');
+            if (body.classList.contains('dark-mode')) {
+              LanguageIconSec.src = 'images/languages-dark.png';
+            } else {
+              LanguageIconSec.src = 'images/languages-light.png';
+            }
+          });
+        });
+      });
+      
+    </script>
+</body>
+</html>
