@@ -17,14 +17,7 @@
   scroll-behavior: smooth;
 }
 body {
-  background: linear-gradient(90deg, rgba(21, 9, 245, 0.733) 32%, rgba(239,255,0,1) 100%);
-}
-
-
-/* Dark mode */
-.header-navbar .header-menu {
-  color: var(--text-color-light); /* Default to light theme */
-  text-decoration: none;
+  background: linear-gradient(90deg, rgba(13, 0, 255, 0.849) 32%, rgba(239,255,0,1) 100%);
 }
 
 .header {
