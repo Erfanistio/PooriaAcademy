@@ -6,10 +6,6 @@
   font-family: BasefontBold;
   src: url(../font/Kelmah-Bold.otf);
 }
-:root {
-  --background-dark: linear-gradient(90deg, rgba(21, 9, 245, 0.733) 32%, rgba(239,255,0,1) 100%);;
-  --text-color-light: black;
-}
 
 * {
   margin: 0;
@@ -21,26 +17,11 @@
   scroll-behavior: smooth;
 }
 body {
-  transition: background-color 0.5s ease, color 0.5s ease; /* Add transitions for background-color and color */
+  background: linear-gradient(90deg, rgba(21, 9, 245, 0.733) 32%, rgba(239,255,0,1) 100%);
 }
+
 
 /* Dark mode */
-body.dark-mode {
-  background-color: #333; /* Adjust as needed */
-  color: #fff; /* Adjust text color */
-}
-body{
-  background-color: var(--background-light);
-  color: var(--text-color-light);
-}
-
-body.dark-mode {
-  background-image: var(--background-dark);
-  color: var(--text-color-dark);
-}
-body.dark-mode .header-navbar .header-menu {
-  color: var(--text-color-dark);
-}
 .header-navbar .header-menu {
   color: var(--text-color-light); /* Default to light theme */
   text-decoration: none;
